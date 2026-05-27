@@ -5,10 +5,10 @@
 # create a folder under students/ for any new names. Existing folders are never modified.
 #
 # Rules:
-#   - Use underscore between first and last name
+#   - Use underscore between first and last name and also use university name.
 #   - No spaces, hyphens, dots, or numbers
 #   - Each name must be unique
 
 students:
-#  - alice_smith
-#  - bob_jones
+  - Bee_Lamsma_SUNY_Oswego
+  - Daniel_Wefer_NIU
