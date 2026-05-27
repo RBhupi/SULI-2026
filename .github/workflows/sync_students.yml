@@ -1,0 +1,89 @@
+name: Sync Student Folders
+
+on:
+  push:
+    paths:
+      - "config/students.yml"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Scaffold student folders
+        run: |
+          python - <<'EOF'
+          import os
+          import shutil
+          import sys
+          import yaml
+
+          CONFIG = "config/students.yml"
+          TEMPLATE = "_template_student"
+          STUDENTS_DIR = "students"
+
+          with open(CONFIG) as f:
+              data = yaml.safe_load(f)
+
+          students = data.get("students", [])
+          if not students:
+              print("No students found in config/students.yml — nothing to do.")
+              sys.exit(0)
+
+          errors = []
+          for name in students:
+              if ' ' in str(name):
+                  errors.append(f"  '{name}' contains a space. Use an underscore instead.")
+
+          if errors:
+              print("ERROR: Invalid student names in config/students.yml:\n")
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+
+          created = []
+          skipped = []
+          for name in students:
+              dest = os.path.join(STUDENTS_DIR, name)
+              if os.path.isdir(dest):
+                  skipped.append(name)
+              else:
+                  shutil.copytree(TEMPLATE, dest)
+                  created.append(name)
+
+          if created:
+              print(f"Created folders for: {', '.join(created)}")
+          if skipped:
+              print(f"Already existed (skipped): {', '.join(skipped)}")
+
+          if not created:
+              print("No new student folders needed.")
+          EOF
+
+      - name: Commit and push new folders
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add students/
+          if git diff --cached --quiet; then
+            echo "Nothing to commit — all student folders already exist."
+          else
+            git commit -m "scaffold: add student folders from students.yml"
+            git push
+          fi

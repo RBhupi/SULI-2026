@@ -1,0 +1,14 @@
+# List enrolled students here using firstname_lastname format (lowercase, underscore only).
+# Example: alice_smith, bob_jones
+#
+# When you push a change to this file, the sync_students workflow will automatically
+# create a folder under students/ for any new names. Existing folders are never modified.
+#
+# Rules:
+#   - Use underscore between first and last name
+#   - No spaces, hyphens, dots, or numbers
+#   - Each name must be unique
+
+students:
+#  - alice_smith
+#  - bob_jones

@@ -1,0 +1,77 @@
+name: Validate Student PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Validate PR
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'EOF'
+          import os
+          import subprocess
+          import sys
+          import yaml
+
+          CONFIG = "config/students.yml"
+
+          with open(CONFIG) as f:
+              known = set(yaml.safe_load(f).get("students", []))
+
+          result = subprocess.run(
+              ["git", "diff", "--name-only",
+               os.environ["BASE_SHA"], os.environ["HEAD_SHA"]],
+              capture_output=True,
+              text=True,
+          )
+
+          changed = [f.strip() for f in result.stdout.splitlines() if f.strip()]
+
+          student_folders = set()
+
+          for path in changed:
+              parts = path.split("/")
+              if len(parts) >= 2 and parts[0] == "students":
+                  student_folders.add(parts[1])
+
+          errors = []
+
+          for folder in student_folders:
+              if folder not in known:
+                  errors.append(
+                      f"'students/{folder}/' is not registered "
+                      "in config/students.yml"
+                  )
+
+              blog = f"students/{folder}/blog.md"
+              if not os.path.isfile(blog):
+                  errors.append(
+                      f"Missing required file: {blog}"
+                  )
+
+          if errors:
+              print("\nValidation failed:\n")
+              for e in errors:
+                  print(f" - {e}")
+              sys.exit(1)
+
+          print("Validation passed.")
+          EOF
