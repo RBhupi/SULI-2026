@@ -16,7 +16,7 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 
 **Future Plans**
 -
--- 
+  -
 
 ---
 
