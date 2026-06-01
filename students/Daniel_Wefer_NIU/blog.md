@@ -1,25 +1,31 @@
 # Research Blog
-
-Add a new entry each week (or more often if you like). Be honest — write what actually happened, not just what went well. This log will help you write your final report.
-
 ---
 
-## YYYY-MM-DD
+## 2026-05-26 to 2026-05-29
 
 **What I worked on:**
-_Describe the main tasks, experiments, or analyses you did this week._
+
+Onboarding tasks, safety trainings, etc. 
+
+Setting up GCE and ALCF accounts, setting up remote SSH
+
+Understanding project, reviewing relevant ViT papers (dario's paper, a picture is worth 16x16 words, etc.)
 
 **What helped:**
-_A paper, a conversation with your mentor, a tutorial, a tool — what moved you forward?_
+
+Good talks with Bhupendra and reviewing Dario's paper
 
 **What was challenging:**
-_A bug, a confusing result, something you couldn't figure out — write it down even if unresolved._
+
+Everything about Vision Transformers is challenging to understand.
 
 **What I learned:**
-_One or two things you understand better now than you did last week._
+
+The general gist of what a ViT is, and what my next steps are for the project
 
 ### Next steps
-- 
-- 
+
+- Run Dario's code run in GCE with some dummy images
+- Make Dario's code work for a small sample of dummy radar data in GCE
 
 ---
