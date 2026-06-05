@@ -51,14 +51,46 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 
 ---
 
-## Week 1 (May 26-29)
+## Week 2 (June 1-5)
 
 **Successes**
-_Describe the main tasks, experiments, or analyses you did this week._
+- Case Study
+  - Finished LMA and radar analysis using pyxlma and Adapt.
+  - Compiled most interesting figures into a powerpoint.
+    - View of LMA and Radar at peak reflectivity and ZDR as well as min ZDR.
+    - A couple of plots when there were flashes extending outside of the cell.
+    - Plots prior to and after merger of cells.
+- Full Study
+  - Beginning to download data from NASA's earthdata repository.
+    - Only 1st year at this moment to test space on server, eventually will download all 7 years.
+- Adapt Improvements
+  - Background map now visible.
+  - Can now view more than 5 radar scans!
 
 **Shortcomings**
-_A paper, a conversation with your mentor, a tutorial, a tool — what moved you forward?_
+- Case Study
+  - Was not able to make use of GLM for comparison with LMA.
+    - Prior notebooks used are out of date and I wanted to begin working on the full study.
+  - Could be imporved by more detailed lightning statistics per cell with future versions of Adapt.
+- Getting used to all the linux commands again is taking time. 
 
 **Future Plans**
-_
-_ 
+- Download and process the LMA data on one of the fancy servers.
+- Download the radar data.
+- Process everything together to get final statistics.
+- Poster
+- Presentation
+- Final Report
+- Manuscrpit (?)
+---
+
+## Week 3 (June 8-12)
+
+**Successes**
+- 
+
+**Shortcomings**
+- 
+
+**Future Plans**
+- 
