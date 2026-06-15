@@ -82,9 +82,31 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 - Presentation
 - Final Report
 - Manuscrpit (?)
+
 ---
 
 ## Week 3 (June 8-12)
+
+**Successes**
+- Downloaded and processed all the LMA data within the gce server.
+- Downloaded the radar data to the gce server.
+- Attended weekly student and DOE seminars along with an extra EVS seminar.
+- Adapt now has lightning processing included!
+
+**Shortcomings**
+- Stuggling to get the lightning processing to work on my end.
+  - Cells not correctly linked to tracks and lightning not associating with individual cells.
+
+**Future Plans**
+- Process everything together to get final statistics.
+- Poster
+- Presentation
+- Final Report
+- Manuscrpit (?)
+
+---
+
+## Week 4 (June 15-19)
 
 **Successes**
 - 
