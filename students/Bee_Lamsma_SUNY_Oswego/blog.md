@@ -109,6 +109,38 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 ## Week 4 (June 15-19)
 
 **Successes**
+- Lightning processing is now fixed.
+  - Adapt dashboard can show lightning characteristics for each cell.
+  - Adapt output includes numerous lightning characteristics per cell in a series of tables.
+- Developed database viewer.
+  - Includes filtering for different cell and lightning characteristics.
+  - Can select a single cell to observe.
+  - Quick statistics on how many lightning flashes, longest cell track, highest reflectivity, etc.
+  - *Still in development*
+
+**Shortcomings**
+- Threat of flooding on Wednesday lead to work from home.
+  - Attended student and DOE seminars online :(
+  - Was not able to supervise adapt processing.
+- Got sick Wednesday night leading to a down day Thursday.
+  - Got a little bit done from bed but mostly took the day off.
+- Adapt run still not complete.
+  - Performed some optimisations to what is output, but still taking 10-20 seconds per radar scan.
+
+**Future Plans**
+- Finish adding features to database viewer.
+- Clean up, optimise, and anotate the code for better understanding of why everything functions.
+- Process everything together to get final statistics.
+- Poster
+- Presentation
+- Final Report
+- Manuscrpit (?)
+
+---
+
+## Week 5 (June 22-26)
+
+**Successes**
 - 
 
 **Shortcomings**
@@ -116,3 +148,4 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 
 **Future Plans**
 - 
+
