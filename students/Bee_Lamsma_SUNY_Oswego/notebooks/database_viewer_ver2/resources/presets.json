@@ -1,0 +1,17 @@
+{
+    "Severe Storm": {
+        "dbz_max": ">60",
+        "cell_top_m": ">10000",
+        "flash_count": ">20"
+    },
+    "Long Duration Cell": {
+        "duration_seconds": ">3600"
+    },
+    "High Lightning": {
+        "flash_count": ">50",
+        "mean_flash_rate_per_min": ">10"
+    },
+    "Large Cell": {
+        "cell_area_km2": ">50"
+    }
+}
