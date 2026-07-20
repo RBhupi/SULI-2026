@@ -146,3 +146,24 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 
 ## Week 8 (July 13-17)
 
+**The Corrupted Adapt Run**
+- All referenced files are located in the box link at the end of this section.
+- Adapt was running for 10 days near continuously, with about a 12 hour break following day 7.
+- Over 130 episodes were processed with over 30000 radar files.
+- On July 15th, it was discovered that the catalog was corrupted and attempts were made to repair the data.
+  - From there it was discovered that the only data in the file was for the last week of June 2023.
+- adapt_run_ver2.pbs is the script that was starting the adapt runs based on time/location of events in ALABAMA_TENNESSEE_2019-2026_weather-episodes.csv.
+- config.yaml is available in the box.
+- The .pbs script had adapt write the output to a single catalog.db file.  
+  - There should have been enough separation between the runs while moving processed files from a tamp directory to an archive to not have multiple runs writing to the catalog at once.
+  - Prior tests have had multiple adapt runs write the same scan multiple times and have not failed (2025-05-02 case).
+
+https://anl.box.com/s/wglrrgdqbky28idroe9925f4k2e2qhz7
+
+---
+
+## Week 9 (July 20-24)
+
+---
+
+## Week 10 (July 27-31)
