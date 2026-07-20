@@ -138,14 +138,11 @@ Add a new entry each week (or more often if you like). Be honest — write what 
 
 ---
 
-## Week 5 (June 22-26)
+## Week 5-7 (June 22-26 - July 6-10)
 
-**Successes**
-- 
+- All of the time during these weeks was spent trying to debug and run Adapt over the multi-year period. Next entry will catalog what happened with that run.
 
-**Shortcomings**
-- 
+---
 
-**Future Plans**
-- 
+## Week 8 (July 13-17)
 
